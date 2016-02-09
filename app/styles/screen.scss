@@ -54,6 +54,7 @@
   max-width: 960px;
   margin: 0 auto;
   border: 1px solid $gray;
+  font-family: 'proxima-nova', sans-serif;
 }
 
 .section {
@@ -80,9 +81,11 @@
 
   text-align: center;
   overflow: hidden;
+  letter-spacing: $vertical-rhythm / 4;
+  font-family: 'Gnuolane', sans-serif;
 
   > h1 {
-    @extend .zeta;
+    @extend .epsilon;
 
     display: inline-block;
     position: relative;
@@ -126,6 +129,7 @@
     bottom: -8%;
     margin: 0 auto;
     border: 2px solid $black;
+    font-family: 'freight-display-pro', serif;
 
     @media screen and ( min-width: 450px ) {
       left: auto;
