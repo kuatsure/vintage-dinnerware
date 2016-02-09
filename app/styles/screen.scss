@@ -1,0 +1,173 @@
+// Screen Manifest File
+
+@import 'config/variables';
+
+@import 'inuit-defaults/settings.defaults';
+
+@import 'inuit-functions/tools.functions';
+@import 'inuit-mixins/tools.mixins';
+
+@import 'inuit-normalize/generic.normalize';
+@import 'inuit-box-sizing/generic.box-sizing';
+
+@import 'inuit-page/base.page';
+@import 'inuit-headings/base.headings';
+@import 'inuit-images/base.images';
+@import 'inuit-paragraphs/base.paragraphs';
+@import 'inuit-lists/base.lists';
+
+@import 'inuit-buttons/objects.buttons';
+
+.text--center {
+  text-align: center;
+}
+
+.text--caps {
+  text-transform: uppercase;
+}
+
+.text--underline--bold {
+  border-bottom: 2px solid;
+}
+
+.float--right {
+  float: right;
+}
+
+.background--white {
+  background-color: $white;
+}
+
+.background--steel--transparent {
+  background-color: rgba( $steel, .8 );
+}
+
+.box {
+  padding: $vertical-rhythm;
+}
+
+  .box--bottom {
+    padding-bottom: $vertical-rhythm;
+  }
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid $gray;
+}
+
+.section {
+  .copy,
+  .btn {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .copy {
+    width: 60%;
+    padding-top: $vertical-rhythm;
+    padding-bottom: $vertical-rhythm;
+    @include inuit-font-size( 12px );
+  }
+
+  .btn {
+    font-size: smaller;
+  }
+}
+
+.section__header {
+  $buffer: $vertical-rhythm;
+
+  text-align: center;
+  overflow: hidden;
+
+  > h1 {
+    @extend .zeta;
+
+    display: inline-block;
+    position: relative;
+    padding: $vertical-rhythm;
+
+    &:before,
+    &:after {
+      content: '';
+      top: 50%;
+      position: absolute;
+      width: 100vh;
+      height: 5px;
+      border-top: 1px solid $black;
+    }
+
+    &:before {
+      right: 100%;
+      margin-right: $buffer;
+    }
+
+    &:after {
+      left: 100%;
+      margin-left: $buffer;
+    }
+  }
+}
+
+.masthead {
+  position: relative;
+  min-height: 300px;
+  margin: $vertical-rhythm * 2;
+  margin-top: 0;
+  background: transparent url( '../images/background-vintage-dinnerware.jpg' ) center no-repeat;
+  background-size: cover;
+}
+
+  .masthead__header {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -8%;
+    margin: 0 auto;
+    border: 2px solid $black;
+
+    @media screen and ( min-width: 450px ) {
+      left: auto;
+      right: calc( 50% - 200px );
+      width: 400px;
+    }
+
+    > h2 {
+      @include inuit-font-size( 14px );
+
+      margin: $vertical-rhythm 0;
+
+      @media screen and ( min-width: 525px ) {
+        @include inuit-font-size( 16px );
+      }
+
+      @media screen and ( min-width: 768px ) {
+        @include inuit-font-size( 18px );
+      }
+    }
+  }
+
+  .masthead__aside {
+    position: absolute;
+    right: 0;
+    bottom: 16%;
+    width: 35%;
+    height: 30%;
+    color: $white;
+    vertical-align: middle;
+    @include inuit-font-size( 24px );
+
+    @media screen and ( min-width: 525px ) {
+      width: 20%;
+    }
+
+    @media screen and ( min-width: 768px ) {
+      width: 13%;
+    }
+
+    > p {
+      margin: 0;
+      letter-spacing: $vertical-rhythm / 4;
+    }
+  }
